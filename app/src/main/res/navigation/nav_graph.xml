@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signUpEmailFragment">
+
+    <fragment
+        android:id="@+id/signUpEmailFragment"
+        android:name="com.zibran.learningprojects.music_app.fragments.SignUpEmailFragment"
+        android:label="fragment_sign_up_email"
+        tools:layout="@layout/fragment_sign_up_email" >
+        <action
+            android:id="@+id/action_signUpEmailFragment_to_signUpPassFragment"
+            app:destination="@id/signUpPassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpPassFragment"
+        android:name="com.zibran.learningprojects.music_app.fragments.SignUpPassFragment"
+        android:label="fragment_sign_up_pass"
+        tools:layout="@layout/fragment_sign_up_pass" >
+        <action
+            android:id="@+id/action_signUpPassFragment_to_signUpGenderFragment"
+            app:destination="@id/signUpGenderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpGenderFragment"
+        android:name="com.zibran.learningprojects.music_app.fragments.SignUpGenderFragment"
+        android:label="fragment_sign_up_gender"
+        tools:layout="@layout/fragment_sign_up_gender" >
+        <action
+            android:id="@+id/action_signUpGenderFragment_to_signUpNameFragment"
+            app:destination="@id/signUpNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpNameFragment"
+        android:name="com.zibran.learningprojects.music_app.fragments.SignUpNameFragment"
+        android:label="fragment_sign_up_name"
+        tools:layout="@layout/fragment_sign_up_name" >
+        <action
+            android:id="@+id/action_signUpNameFragment_to_signUpEmailFragment"
+            app:destination="@id/signUpEmailFragment" />
+    </fragment>
+</navigation>
