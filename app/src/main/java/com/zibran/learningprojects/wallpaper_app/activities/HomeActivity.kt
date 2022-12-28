@@ -12,19 +12,22 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
     private val wallpaperViewModel by viewModels<WallpaperViewModel>()
     var list = mutableListOf<Hit>()
-    private lateinit var wallpaperAdapter: WallpaperAdapter
+
+    @Inject
+    lateinit var wallpaperAdapter: WallpaperAdapter
     lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        wallpaperAdapter = WallpaperAdapter(this)
+//        wallpaperAdapter = WallpaperAdapter(this)
         binding.wallRV.adapter = wallpaperAdapter
         setWallpaperData("flower")
 

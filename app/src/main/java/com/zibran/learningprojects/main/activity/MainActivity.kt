@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity(), ClickListener {
     lateinit var binding: ActivityMainBinding
     var list = mutableListOf<String>()
     lateinit var adapter: MainAdapter
+    var pos = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)

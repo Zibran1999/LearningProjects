@@ -8,10 +8,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class WallpaperViewModel @Inject constructor(
-    private val wallpaperRepository: WallpaperRepository,
-) :
-    ViewModel() {
+class WallpaperViewModel @Inject constructor(val wallpaperRepository: WallpaperRepository) : ViewModel() {
+//    @Inject
+//     lateinit var wallpaperRepository: WallpaperRepository
 
     suspend fun getWallPaper(query: String): List<Hit> {
         return wallpaperRepository.getWallpaperDetails(query)

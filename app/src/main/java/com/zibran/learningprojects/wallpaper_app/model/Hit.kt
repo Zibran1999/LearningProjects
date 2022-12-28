@@ -1,16 +1,14 @@
 package com.zibran.learningprojects.wallpaper_app.model
 
-data class WallpaperModel(
-    val hits: List<Hit>,
-    val total: Int,
-    val totalHits: Int,
-)
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity(tableName = "wallpapers")
 data class Hit(
     val collections: Int,
     val comments: Int,
     val downloads: Int,
-    val id: Int,
+    @PrimaryKey val id: Int,
     val imageHeight: Int,
     val imageSize: Int,
     val imageWidth: Int,
